@@ -1,32 +1,38 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Image, StyleSheet } from "react-native";
+import React, {useEffect, useContext, useState} from "react";
+import { StyleSheet, Image } from "react-native";
 import { createBox, createText } from "@shopify/restyle";
 import {useForm, Controller} from "react-hook-form";
+
 import { ThemeProps } from "../../theme";
+import { AuthContext } from "../../context/AuthContext";
+
 import BaseScreen from "../../components/Views/View";
 import Input from "../../components/Inputs/Input";
 import Button from "../../components/Buttons/Button";
-import { AuthContext } from "../../context/AuthContext";
 import { useNavigation } from "@react-navigation/native";
 import { StackSignTypes } from "../../routes/StackSign.routes";
 
 type FormData ={
     user: string;
     password: string;
+    RepeatPassword: string;
 }
-
 
 const Box = createBox<ThemeProps>()
 const Text = createText<ThemeProps>()
 
-export default function SignIn(){
-    const {SignIn} = useContext(AuthContext)
+export default function SignUp(){
+    const {SignUp} = useContext(AuthContext)
     const navigation = useNavigation<StackSignTypes>()
     const {control, handleSubmit, formState:{errors}} = useForm<FormData>()
     const [viewAlert, setViewAlert] = useState<boolean>(false)
 
     async function Submit(data: FormData){
-        SignIn({email: `${data.user}@ipb.com`, password: data.password})
+        if(data.password != data.RepeatPassword){
+            alert("As Senhas devem ser Iguais")
+            return
+        }
+        SignUp({email: `${data.user}@ipb.com`, password: data.password})
     }
 
     useEffect(()=>{
@@ -79,6 +85,24 @@ export default function SignIn(){
                         onChangeText: onChange
                     }}/>
                 )}/>
+                <Box width={"90%"} alignItems="flex-start" marginLeft="xx">
+                    {viewAlert && <Text variant="messageAlert">{errors.RepeatPassword?.message}</Text>} 
+                </Box>
+                <Controller
+                control={control}
+                name="RepeatPassword"
+                rules={{
+                    required: "Senha obrigátoria"
+                }}
+                render={({field: {value, onChange}})=>(
+                    <Input
+                    inputProps={{
+                        placeholder: "Repita sua Senha",
+                        value: value,
+                        onChangeText: onChange
+                    }}/>
+                )}/>
+                
                 <Button
                 ButtonVariant={{
                     variant: "medium"
@@ -86,7 +110,7 @@ export default function SignIn(){
                 buttonProps={{
                     onPress: handleSubmit(Submit)
                 }}
-                text={<Text>Acessar</Text>}/>
+                text={<Text>Cadastrar</Text>}/>
             </Box>
             <Box position="absolute" bottom={0} width={"100%"} maxHeight={"8%"}
             bg="green_800" height={80} justifyContent="center" alignItems="center">
@@ -95,7 +119,7 @@ export default function SignIn(){
                     variant: "transparent"
                 }}
                 buttonProps={{
-                    onPress: ()=> navigation.navigate("SignUp")
+                    onPress: ()=> navigation.navigate("SignIn")
                 }}
                 text={<Text>Cadastre-se</Text>}/>
             </Box>
