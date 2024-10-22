@@ -1,14 +1,14 @@
 import React from "react";
 import { createRestyleComponent, createVariant, VariantProps } from "@shopify/restyle";
 import { StyleSheet, TouchableHighlight, TouchableHighlightProps, TouchableOpacity, TouchableOpacityProps  } from "react-native";
-import { ThemeProps } from "../../theme";
+import theme, { ThemeProps } from "../../theme";
 
 type CustomButtonProps= 
 VariantProps<ThemeProps, "buttonVariants">
 
 type ComponentButtomProps={
     ButtonVariant?: CustomButtonProps;
-    buttonProps: TouchableOpacityProps;
+    buttonProps?: TouchableOpacityProps;
     text?: React.JSX.Element;
 }
 
@@ -28,8 +28,8 @@ export default function Button({buttonProps, ButtonVariant, text}: ComponentButt
 
 const Style = StyleSheet.create({
     button:{
-        width: "100%",
-        height: "100%",
+        flex:1,
+        backgroundColor: theme.colors.green_1000,
         justifyContent: "center",
         alignItems: "center",
     }

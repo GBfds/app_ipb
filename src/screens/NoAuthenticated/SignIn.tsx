@@ -76,7 +76,8 @@ export default function SignIn(){
                     inputProps={{
                         placeholder: "Digite sua Senha",
                         value: value,
-                        onChangeText: onChange
+                        onChangeText: onChange,
+                        secureTextEntry: true
                     }}/>
                 )}/>
                 <Button

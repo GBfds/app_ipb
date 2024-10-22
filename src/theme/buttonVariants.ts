@@ -13,10 +13,17 @@ const buttonVariants ={
         elevation: 8,
         margin: "x",
     },
+    List:{
+        width: "100%",
+        alignItems: "flex-start",
+        paddingLeft: "m",
+        height: 45,
+        marginVertical: "m",
+        textAlign: "center"
+    },
     transparent:{
-        width: "95%",
+       width: "60%",
         height: 56,
-        elevation: 0
     }
 }
 

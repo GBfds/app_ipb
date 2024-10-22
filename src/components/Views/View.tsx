@@ -10,7 +10,7 @@ type ViewProps = {
 
 const Box = createBox<ThemeProps>()
 
-export default function BaseScreen({children, canGoBack = false, }: ViewProps){
+export default function BaseScreen({children, canGoBack = false}: ViewProps){
     return(
         <Box flex={1}>
             {children}
