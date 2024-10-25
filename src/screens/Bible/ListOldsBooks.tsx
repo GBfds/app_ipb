@@ -1,12 +1,12 @@
 import { createBox, createText } from "@shopify/restyle";
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import theme, { ThemeProps } from "../../theme";
 import BaseScreen from "../../components/Views/View";
 import Button from "../../components/Buttons/Button";
 import { FlatList, SafeAreaView, StyleSheet } from "react-native";
 import { OldTestament } from "../../assets/files/ARA";
 import { useNavigation } from "@react-navigation/native";
-import { StackBBNavigation, StackBBTypes } from "../../routes/StackBB.routes";
+import { StackBBTypes } from "../../routes/StackBB.routes";
 
 const Box = createBox<ThemeProps>()
 const Text = createText<ThemeProps>()

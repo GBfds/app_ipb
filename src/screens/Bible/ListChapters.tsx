@@ -8,7 +8,6 @@ import theme from "../../theme";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { StackBBNavigation, StackBBTypes } from "../../routes/StackBB.routes";
 
-import { NewTestament, chapterType } from "../../assets/files/ARA";
 import Loading from "../OthersScreens/Loading";
 
 const Box = createBox<ThemeProps>()
