@@ -16,7 +16,7 @@ export default function Home(){
         <Box flex={1} justifyContent="center" alignItems="center">
             <Text>Home</Text>
             <Button
-            ButtonVariant={{
+            buttonVariant={{
                 variant: "medium"
             }}
             buttonProps={{

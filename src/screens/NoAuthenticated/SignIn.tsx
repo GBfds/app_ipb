@@ -81,7 +81,7 @@ export default function SignIn(){
                     }}/>
                 )}/>
                 <Button
-                ButtonVariant={{
+                buttonVariant={{
                     variant: "medium"
                 }}
                 buttonProps={{
@@ -92,7 +92,7 @@ export default function SignIn(){
             <Box position="absolute" bottom={0} width={"100%"} maxHeight={"8%"}
             bg="green_800" height={80} justifyContent="center" alignItems="center">
                 <Button
-                ButtonVariant={{
+                buttonVariant={{
                     variant: "transparent"
                 }}
                 buttonProps={{

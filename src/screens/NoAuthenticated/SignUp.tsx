@@ -104,7 +104,7 @@ export default function SignUp(){
                 )}/>
                 
                 <Button
-                ButtonVariant={{
+                buttonVariant={{
                     variant: "medium"
                 }}
                 buttonProps={{
@@ -115,13 +115,13 @@ export default function SignUp(){
             <Box position="absolute" bottom={0} width={"100%"} maxHeight={"8%"}
             bg="green_800" height={80} justifyContent="center" alignItems="center">
                 <Button
-                ButtonVariant={{
+                buttonVariant={{
                     variant: "transparent"
                 }}
                 buttonProps={{
                     onPress: ()=> navigation.navigate("SignIn")
                 }}
-                text={<Text>Cadastre-se</Text>}/>
+                text={<Text>Entrar em sua Conta</Text>}/>
             </Box>
         </Box>
         </BaseScreen>

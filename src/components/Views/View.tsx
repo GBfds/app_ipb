@@ -1,4 +1,4 @@
-import { BoxProps, createBox } from "@shopify/restyle";
+import { createBox } from "@shopify/restyle";
 import React, { ReactNode } from "react";
 import { ThemeProps } from "../../theme";
 
@@ -12,7 +12,7 @@ const Box = createBox<ThemeProps>()
 
 export default function BaseScreen({children, canGoBack = false}: ViewProps){
     return(
-        <Box flex={1}>
+        <Box flex={1} paddingBottom="x">
             {children}
         </Box>
     )

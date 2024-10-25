@@ -10,7 +10,11 @@ const textVariants = {
         fontWeight: "700",
     },
     strong:{
-        color: "green_800",
+        color: "green_1000",
+        fontWeight: "700",
+    },
+    title:{
+        fontSize: 24,
         fontWeight: "700",
     }
 }
