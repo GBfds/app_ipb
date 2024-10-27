@@ -75,11 +75,10 @@ export default function AuthProvider({children}: AuthProviderProps){
                     contactPhone: hasUser.contactPhone,
                 })
             }
-            setLoading(false)
+        setLoading(false)
     }
 
     async function SetUserLocalStorage(user: userProps){
-            
         await AsyncStorage.setItem("@UserAuthData", JSON.stringify(user))
     }
 
@@ -112,10 +111,13 @@ export default function AuthProvider({children}: AuthProviderProps){
                 contactEmail: "",
                 contactPhone: "",
             })
+            setLoading(false)
             
+        }).catch(()=>{
+            setLoading(false)
+            alert("Não foi possivel fazer Login. se o erro persistir entre em contato com o Administrador")
         })
 
-        setLoading(false)
     }
 
     async function InitInfosUser(id: string, email: string){

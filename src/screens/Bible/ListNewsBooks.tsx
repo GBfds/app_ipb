@@ -60,6 +60,7 @@ const Style = StyleSheet.create({
         width: "100%",
         justifyContent: "center",
         alignItems: "center",
+       // textAlign: ""
     },
     FlatList:{
         padding: 12,

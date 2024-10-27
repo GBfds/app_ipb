@@ -3,12 +3,14 @@ import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/n
 import ListOldsBooks from "../screens/Bible/ListOldsBooks";
 import ListNewsBooks from "../screens/Bible/ListNewsBooks";
 import ListChapters from "../screens/Bible/ListChapters";
-import { bookType } from "../assets/files/ARA";
+import { bookType, chapterType } from "../assets/files/ARA";
+import Chapters from "../screens/Bible/Chapter";
 
 export type StackBBNavigation ={
     ListOldsBooks: undefined;
     ListNewsBooks: undefined;
     ListChapters: bookType;
+    Chapter: chapterType;
 }
 
 export type StackBBTypes = NativeStackNavigationProp<StackBBNavigation>
@@ -29,6 +31,9 @@ export default function StackBBRoutes(){
             <Stack.Screen
             name="ListChapters"
             component={ListChapters}/>
+            <Stack.Screen
+            name="Chapter"
+            component={Chapters}/>
         </Stack.Navigator>
     )
 }

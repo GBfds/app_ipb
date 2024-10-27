@@ -3,6 +3,7 @@ import { backgroundColor, color } from "@shopify/restyle"
 const textVariants = {
     defaults:{
         fontSize: 16,
+        textAlign: "justify"
     },
     messageAlert:{
         color: "red_700",
@@ -16,6 +17,9 @@ const textVariants = {
     title:{
         fontSize: 24,
         fontWeight: "700",
+    },
+    text:{
+        fontSize: 18,
     }
 }
 

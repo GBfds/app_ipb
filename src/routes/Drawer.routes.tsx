@@ -11,6 +11,9 @@ export default function DrawerRoutes() {
     <Drawer.Navigator screenOptions={{
         title: "",
         drawerActiveBackgroundColor: theme.colors.green_500,
+        headerStyle:{
+          backgroundColor: theme.colors.green_20
+        },
         drawerContentContainerStyle:{
             flex: 1,
             backgroundColor: theme.colors.green_20,

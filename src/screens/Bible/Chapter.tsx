@@ -13,56 +13,41 @@ import Loading from "../OthersScreens/Loading";
 const Box = createBox<ThemeProps>()
 const Text = createText<ThemeProps>()
 
-type RouteProps = RouteProp<StackBBNavigation, "ListChapters">
+type RouteProps = RouteProp<StackBBNavigation, "Chapter">
 
-export default function ListChapters(){
-    const [loading, setLoading] = useState(false)
+type versesType = {
+    id: string;
+    verse: string;
+}
+
+export default function Chapters(){
     const navigation = useNavigation<StackBBTypes>()
     const route = useRoute<RouteProps>()
-    const book = route.params
+    const chapter = route.params
 
-    let AllCaps: number[] = []
+    let verses: versesType[] = []
 
-    useEffect(()=>{
-        setLoading(true)
-        for(let i=0; i < book.chapters.length; i++){           
-            AllCaps.push(i+1)
+    useEffect(()=> {
+        for(let i=0; i< chapter.verses.length; i++){
+            verses.push({
+                id: String(i+1),
+                verse: chapter.verses[i]
+            })
         }
-        setLoading(false)
     },[])
 
-    if(loading == true){
-        return(
-            <Loading/>
-        )
-    }
     
     return(
         <BaseScreen>
         <Box width={"100%"} height={56} justifyContent="center" alignItems="center">
-            <Text variant="title">{book.name}</Text>
+            <Text variant="title">{chapter.name} {chapter.number}</Text>
         </Box>
         <Box flex={1} justifyContent="center" alignItems="center">
             <SafeAreaView style={Style.SafeContainer}>
                 <FlatList
-                data={AllCaps}
-                renderItem={({item})=> 
-                <Button
-                buttonVariant={{
-                    variant: "ListSmall"
-                }}
-                buttonProps={{
-                    onPress: ()=> navigation.navigate("Chapter", {
-                        name: book.name,
-                        number: item,
-                        verses: book.chapters[item - 1]
-                    })
-                }}
-                text={<Text variant="strong">{item}</Text>}/>}
-                keyExtractor={item=> String(item)}
-                numColumns={4}
-                columnWrapperStyle={{justifyContent: "space-around"}}
-                contentContainerStyle={{padding: 10}}/>
+                data={verses}
+                renderItem={({item})=> <Text variant="text" marginBottom="m">{item.id}. {item.verse}</Text>}
+                style={Style.FlatList}/>
             </SafeAreaView>
             
         </Box>
