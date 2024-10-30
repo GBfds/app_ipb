@@ -5,13 +5,16 @@ const textVariants = {
         fontSize: 16,
         textAlign: "justify"
     },
+    medium:{
+        fontSize: 18,
+        fontWeight: "400",
+    },
     messageAlert:{
         color: "red_700",
         fontSize: 16,
         fontWeight: "700",
     },
     strong:{
-        color: "green_1000",
         fontWeight: "700",
     },
     title:{

@@ -39,10 +39,11 @@ export default function ListOldsBooks(){
                 renderItem={({item})=> 
                     <Button
                     buttonVariant={{
-                        variant: "ListLarge"
+                        variant: "LargeAlignStart"
                     }}
                     buttonProps={{
-                        onPress: ()=> navigation.navigate("ListChapters", item)
+                        onPress: ()=> navigation.navigate("ListChapters", item),
+                        style: Style.ButtonList
                     }}
                     text={<Text variant="strong">{item.name}</Text>}/>
                 }
@@ -64,6 +65,11 @@ const Style = StyleSheet.create({
     FlatList:{
         padding: 12,
         width: "100%",
+    },
+    ButtonList:{
+        borderRadius: 8,
+        backgroundColor: theme.colors.gray,
+        marginVertical: theme.spacing.m
     }
 })
 

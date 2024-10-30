@@ -9,20 +9,12 @@ import { AuthContext } from "../../context/AuthContext";
 const Box = createBox<ThemeProps>()
 const Text = createText<ThemeProps>()
 
-export default function Home(){
+export default function Events(){
     const {SignOut} = useContext(AuthContext)
     return(
         <BaseScreen>
-        <Box flex={1} justifyContent="center" alignItems="center">
-            <Text>Home</Text>
-            <Button
-            buttonVariant={{
-                variant: "medium"
-            }}
-            buttonProps={{
-                onPress: SignOut,
-            }}
-            text={<Text>Sair</Text>}/>
+        <Box flex={1} justifyContent="center" alignItems="center" bg="green_20">
+            <Text>Events</Text>
         </Box>
         </BaseScreen>
     )

@@ -3,8 +3,9 @@ import { ARA } from "./ARA";
 export type biblieType = typeof ARA
 export type bookType = typeof BibliaARA[0]
 export type chapterType = {
-    number: number;
-    verses: string[];
+    length: number;
+    verse: number;
+    verses: string[][];
     name: string;
 }
 export const BibliaARA = ARA

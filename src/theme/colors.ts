@@ -9,14 +9,13 @@ const colors = {
     green100: "#f0fde2",
 
     green_250 :"#36802d",
-    green_300 :"#77ab59",
     green_moss :"#c9df8a",
     green_40:"#f0f7da",
-    green_20:"#f0f7ea",
+    green_20:"#f9fef8",
 
     red_700: "#bc0401",
 
-    gray: "#d6d6d6"
+    gray: "#d6d6d6",
 }
 
 export default colors

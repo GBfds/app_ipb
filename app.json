@@ -18,10 +18,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.gabriel_fs.app_ipb"
     },
     "web": {
       "favicon": "./assets/logo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b12b5e3b-5fa8-4a35-8c0d-a86e658000e2"
+      }
     }
   }
 }

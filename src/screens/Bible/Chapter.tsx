@@ -24,23 +24,67 @@ export default function Chapters(){
     const navigation = useNavigation<StackBBTypes>()
     const route = useRoute<RouteProps>()
     const chapter = route.params
+    const [verse, setVerse] = useState<number>(chapter.verse)
 
     let verses: versesType[] = []
 
     useEffect(()=> {
-        for(let i=0; i< chapter.verses.length; i++){
+        for(let i=0; i< chapter.verses[verse - 1].length; i++){
             verses.push({
                 id: String(i+1),
-                verse: chapter.verses[i]
+                verse: chapter.verses[verse - 1][i]
             })
         }
-    },[])
+    },[verse])
+
+    function PreviousChapter(){
+        if(verse > 1){
+            setVerse(verse - 1)
+        } else{
+            return
+        }
+    }
+    function NextChapter(){
+        if(verse < chapter.length){
+            setVerse(verse + 1)
+        } else{
+            return
+        }
+    }
+
 
     
     return(
         <BaseScreen>
-        <Box width={"100%"} height={56} justifyContent="center" alignItems="center">
-            <Text variant="title">{chapter.name} {chapter.number}</Text>
+        <Box width={"100%"} height={56} justifyContent="space-around" alignItems="center"
+        flexDirection="row">
+            <Button
+            buttonVariant={{
+                variant: "ListSmall"
+            }}
+            buttonProps={{
+                onPress: PreviousChapter
+            }}
+            icon={{
+                icon: "leftcircle",
+                iconColor: verse == 1 ? theme.colors.gray : theme.colors.green_800,
+                sizeIcon: 24
+            }}/>
+
+            <Text variant="title">{chapter.name} {verse}</Text>
+
+            <Button
+            buttonVariant={{
+                variant: "ListSmall"
+            }}
+            buttonProps={{
+                onPress: NextChapter
+            }}
+            icon={{
+                icon: "rightcircle",
+                iconColor: verse == chapter.length ? theme.colors.gray : theme.colors.green_800,
+                sizeIcon: 24
+            }}/>
         </Box>
         <Box flex={1} justifyContent="center" alignItems="center">
             <SafeAreaView style={Style.SafeContainer}>

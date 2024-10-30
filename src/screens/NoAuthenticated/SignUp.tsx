@@ -3,7 +3,7 @@ import { StyleSheet, Image } from "react-native";
 import { createBox, createText } from "@shopify/restyle";
 import {useForm, Controller} from "react-hook-form";
 
-import { ThemeProps } from "../../theme";
+import theme, { ThemeProps } from "../../theme";
 import { AuthContext } from "../../context/AuthContext";
 
 import BaseScreen from "../../components/Views/View";
@@ -108,7 +108,8 @@ export default function SignUp(){
                     variant: "medium"
                 }}
                 buttonProps={{
-                    onPress: handleSubmit(Submit)
+                    onPress: handleSubmit(Submit),
+                    style: Style.ButtonSignUp
                 }}
                 text={<Text>Cadastrar</Text>}/>
             </Box>
@@ -133,5 +134,10 @@ const Style = StyleSheet.create({
         width: "90%",
         resizeMode: "contain",
         marginVertical: 28,
+    },
+    ButtonSignUp:{
+        backgroundColor: theme.colors.green_800,
+        borderRadius: 8,
+        margin: theme.spacing.x
     }
 })

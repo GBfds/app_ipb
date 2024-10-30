@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Image, StyleSheet } from "react-native";
 import { createBox, createText } from "@shopify/restyle";
 import {useForm, Controller} from "react-hook-form";
-import { ThemeProps } from "../../theme";
+import theme, { ThemeProps } from "../../theme";
 import BaseScreen from "../../components/Views/View";
 import Input from "../../components/Inputs/Input";
 import Button from "../../components/Buttons/Button";
@@ -85,7 +85,8 @@ export default function SignIn(){
                     variant: "medium"
                 }}
                 buttonProps={{
-                    onPress: handleSubmit(Submit)
+                    onPress: handleSubmit(Submit),
+                    style: Style.ButtonLogin
                 }}
                 text={<Text>Acessar</Text>}/>
             </Box>
@@ -110,5 +111,10 @@ const Style = StyleSheet.create({
         width: "90%",
         resizeMode: "contain",
         marginVertical: 28,
+    },
+    ButtonLogin:{
+        backgroundColor: theme.colors.green_800,
+        borderRadius: 8,
+        margin: theme.spacing.x
     }
 })

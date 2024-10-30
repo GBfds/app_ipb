@@ -28,6 +28,8 @@ export default function ListChapters(){
         for(let i=0; i < book.chapters.length; i++){           
             AllCaps.push(i+1)
         }
+        console.log(book.chapters.length);
+        
         setLoading(false)
     },[])
 
@@ -54,9 +56,11 @@ export default function ListChapters(){
                 buttonProps={{
                     onPress: ()=> navigation.navigate("Chapter", {
                         name: book.name,
-                        number: item,
-                        verses: book.chapters[item - 1]
-                    })
+                        verses: book.chapters,
+                        verse: item,
+                        length: book.chapters.length
+                    }),
+                    style: Style.ButtonList
                 }}
                 text={<Text variant="strong">{item}</Text>}/>}
                 keyExtractor={item=> String(item)}
@@ -79,5 +83,10 @@ const Style = StyleSheet.create({
     FlatList:{
         padding: 12,
         width: "100%",
+    },
+    ButtonList: {
+        backgroundColor: theme.colors.gray,
+        borderRadius: 8,
+        marginVertical: 8
     }
 })
