@@ -10,7 +10,6 @@ const textVariants = {
         fontWeight: "400",
     },
     messageAlert:{
-        color: "red_700",
         fontSize: 16,
         fontWeight: "700",
     },
