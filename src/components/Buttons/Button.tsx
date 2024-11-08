@@ -2,7 +2,7 @@ import React from "react";
 import { createRestyleComponent, createVariant, VariantProps } from "@shopify/restyle";
 import { TouchableOpacity, TouchableOpacityProps  } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
-import theme, { ThemeProps } from "../../theme";
+import { ThemeProps } from "../../theme";
 
 type CustomButtonProps= 
 VariantProps<ThemeProps, "buttonVariants">

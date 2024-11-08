@@ -19,7 +19,7 @@ const Box = createRestyleComponent<CustomTextInputProps, ThemeProps>([
 export default function Input({componentProps, inputProps, message}: ComponentProps){
     return(
         <Box {...componentProps}>
-            <TextInput style={{width: "100%", height: "100%"}} {...inputProps}/>
+            <TextInput style={[{width: "100%", height: "100%"}, inputProps.style]} {...inputProps}/>
         </Box>
     )
 }

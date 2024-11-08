@@ -17,7 +17,6 @@ export default function InfoUser(){
         <Box flex={1} padding="x">
             <Text variant="medium">Id: {user.userID}</Text>
             <Text variant="medium">Nome: {user.name}</Text>
-            <Text variant="medium">Nascimento: {user.birthday.toLocaleDateString("pt-BR")}</Text>
             <Text variant="medium">Apelido: {user.surname}</Text>
             <Text variant="medium">Email: {user.contactEmail}</Text>
             <Text variant="medium">Telefone: {user.contactPhone}</Text>
