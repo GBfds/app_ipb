@@ -62,7 +62,7 @@ export default function ListChapters(){
                     }),
                     style: Style.ButtonList
                 }}
-                text={<Text variant="strong">{item}</Text>}/>}
+                text={<Text variant="medium">{item}</Text>}/>}
                 keyExtractor={item=> String(item)}
                 numColumns={4}
                 columnWrapperStyle={{justifyContent: "space-around"}}

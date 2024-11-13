@@ -1,19 +1,20 @@
-import { createBox } from "@shopify/restyle";
 import React, { ReactNode } from "react";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
+import { createBox } from "@shopify/restyle";
 import { ThemeProps } from "../../theme";
 
 
 type ViewProps = {
-    canGoBack?: boolean;
+    //canGoBack?: boolean;
     children: ReactNode;
 }
 
 const Box = createBox<ThemeProps>()
 
-export default function BaseScreen({children, canGoBack = false}: ViewProps){
+export default function BaseScreen({children}: ViewProps){
     return(
-        <Box flex={1}>
+        <SafeAreaView style={{flex:1}}>
             {children}
-        </Box>
+        </SafeAreaView>
     )
 }

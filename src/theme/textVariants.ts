@@ -1,27 +1,36 @@
-import { backgroundColor, color } from "@shopify/restyle"
+//Fonts
+/*
+Roboto_300Light, 
+Roboto_400Regular, 
+Roboto_500Medium, 
+Roboto_700Bold, 
+Roboto_900Black
+*/
 
 const textVariants = {
     defaults:{
         fontSize: 16,
+        fontFamily: "Roboto_400Regular",
         textAlign: "justify"
+    },
+    small:{
+        fontSize: 14,
+        fontFamily: "Roboto_300Light",
     },
     medium:{
         fontSize: 18,
-        fontWeight: "400",
+        fontFamily: "Roboto_500Medium",
     },
     messageAlert:{
-        fontSize: 16,
-        fontWeight: "700",
+        fontFamily: "Roboto_700Bold",
     },
     strong:{
-        fontWeight: "700",
+        fontSize: 22,
+        fontFamily: "Roboto_900Black",
     },
     title:{
         fontSize: 24,
-        fontWeight: "700",
-    },
-    text:{
-        fontSize: 18,
+        fontFamily: "Roboto_700Bold",
     }
 }
 

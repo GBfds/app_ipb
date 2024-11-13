@@ -1,7 +1,6 @@
 import React from "react";
 import { createRestyleComponent, createVariant, VariantProps } from "@shopify/restyle";
 import { TouchableOpacity, TouchableOpacityProps  } from "react-native";
-import AntDesign from '@expo/vector-icons/AntDesign';
 import { ThemeProps } from "../../theme";
 
 type CustomButtonProps= 
@@ -11,11 +10,7 @@ type ComponentButtomProps={
     buttonVariant?: CustomButtonProps;
     buttonProps?: TouchableOpacityProps;
     text?: React.JSX.Element;
-    icon?:{
-        icon?: keyof typeof AntDesign.glyphMap;
-        iconColor?: string;
-        sizeIcon?: number;
-    };
+    icon?: React.JSX.Element;
 }
 
 const Box = createRestyleComponent<CustomButtonProps, ThemeProps>([
@@ -27,7 +22,7 @@ export default function Button({buttonProps, buttonVariant, text, icon}: Compone
         <TouchableOpacity {...buttonProps} >
             <Box {...buttonVariant}>
                     {text}
-                    {icon?.icon && <AntDesign color={icon.iconColor} name={icon.icon} size={icon.sizeIcon}/>}              
+                    {icon}              
             </Box>
         </TouchableOpacity>
     )

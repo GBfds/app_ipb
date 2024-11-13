@@ -7,6 +7,7 @@ import { FlatList, SafeAreaView, StyleSheet } from "react-native";
 import theme from "../../theme";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { StackBBNavigation, StackBBTypes } from "../../routes/StackBB.routes";
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 import Loading from "../OthersScreens/Loading";
 
@@ -65,11 +66,7 @@ export default function Chapters(){
             buttonProps={{
                 onPress: PreviousChapter
             }}
-            icon={{
-                icon: "leftcircle",
-                iconColor: verse == 1 ? theme.colors.gray : theme.colors.green_800,
-                sizeIcon: 24
-            }}/>
+            icon={<AntDesign name="leftcircle" size={24} color={verse <= 1? theme.colors.gray : theme.colors.green_800}/>}/>
 
             <Text variant="title">{chapter.name} {verse}</Text>
 
@@ -80,17 +77,13 @@ export default function Chapters(){
             buttonProps={{
                 onPress: NextChapter
             }}
-            icon={{
-                icon: "rightcircle",
-                iconColor: verse == chapter.length ? theme.colors.gray : theme.colors.green_800,
-                sizeIcon: 24
-            }}/>
+            icon={<AntDesign name="rightcircle" size={24} color={verse == chapter.length? theme.colors.gray : theme.colors.green_800} />}/>
         </Box>
         <Box flex={1} justifyContent="center" alignItems="center">
             <SafeAreaView style={Style.SafeContainer}>
                 <FlatList
                 data={verses}
-                renderItem={({item})=> <Text variant="text" marginBottom="m">{item.id}. {item.verse}</Text>}
+                renderItem={({item})=> <Text marginBottom="m">{item.id}. {item.verse}</Text>}
                 style={Style.FlatList}/>
             </SafeAreaView>
             

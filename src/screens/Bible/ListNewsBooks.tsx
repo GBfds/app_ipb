@@ -8,6 +8,7 @@ import { NewTestament} from "../../assets/files/ARA";
 import theme from "../../theme";
 import { useNavigation } from "@react-navigation/native";
 import { StackBBTypes } from "../../routes/StackBB.routes";
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 const Box = createBox<ThemeProps>()
 const Text = createText<ThemeProps>()
@@ -25,12 +26,8 @@ export default function ListNewsBooks(){
                 buttonProps={{
                     onPress: ()=> navigation.navigate("ListOldsBooks")
                 }}
-                text={<Text variant="strong" marginRight="x">Velho Testamento</Text>}
-                icon={{
-                    icon: "arrowleft",
-                    iconColor: theme.colors.green_800,
-                    sizeIcon: 24
-                }}/>
+                text={<Text variant="medium" marginRight="x">Velho Testamento</Text>}
+                icon={<AntDesign name="arrowleft" size={24} color={theme.colors.green_800} />}/>
             </Box>
         <Box flex={1} justifyContent="center" alignItems="center">
             <SafeAreaView style={Style.SafeContainer}> 
@@ -45,7 +42,7 @@ export default function ListNewsBooks(){
                         onPress: ()=> navigation.navigate("ListChapters", item),
                         style: Style.ButtonList
                     }}
-                    text={<Text variant="strong">{item.name}</Text>}/>
+                    text={<Text>{item.name}</Text>}/>
                 }
                 keyExtractor={item=> item.abbrev}
                 style={Style.FlatList}/>
