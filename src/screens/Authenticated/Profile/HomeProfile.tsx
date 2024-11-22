@@ -31,7 +31,7 @@ export default function HomeProfile(){
                 justifyContent="center"
                 alignItems="center">
                     <Box
-                    width={"70%"}
+                    width={"80%"}
                     minHeight={150}
                     margin="x"
                     backgroundColor="green_20"
@@ -43,7 +43,7 @@ export default function HomeProfile(){
                         <Box flexDirection="row">
                             <Button
                             buttonVariant={{
-                                variant: "ListSmall"
+                                variant: "ListMedium"
                             }}
                             buttonProps={{
                                 style: [Style.ButtonConfirm, {backgroundColor: theme.colors.gray}],
@@ -52,7 +52,7 @@ export default function HomeProfile(){
                             text={<Text>Sair</Text>}/>
                             <Button
                             buttonVariant={{
-                                variant: "ListSmall"
+                                variant: "ListMedium"
                             }}
                             buttonProps={{
                                 style: [Style.ButtonConfirm, {backgroundColor: theme.colors.green_800}],
@@ -79,12 +79,12 @@ export default function HomeProfile(){
                 buttonProps={{
                     onPress: ()=> navigation.navigate("InfoUser")
                 }}
-                text={<Text variant="medium">Perfil</Text>}/>
+                text={<Text>Perfil</Text>}/>
                 <Button
                 buttonVariant={{
                     variant: "LargeAlignEnd"
                 }}
-                text={<Text variant="medium">Suporte</Text>}/>
+                text={<Text>Suporte</Text>}/>
             
             </Box>
 

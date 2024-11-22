@@ -66,6 +66,6 @@ const Style = StyleSheet.create({
     ButtonList:{
         borderRadius: 8,
         backgroundColor: theme.colors.gray,
-        marginVertical: theme.spacing.m
+        marginVertical: theme.spacing.m,
     }
 })

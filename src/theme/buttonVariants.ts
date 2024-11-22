@@ -8,7 +8,7 @@ const buttonVariants ={
         justifyContent: "center",
     },
     medium:{
-        width: spacing.window * 0.5,
+        width: spacing.window * 0.4,
     },
     largeWithIcon:{
         width: spacing.window * 0.9,
@@ -30,6 +30,11 @@ const buttonVariants ={
     },
     ListSmall:{
         width: spacing.window * 0.16,
+        height: 60,
+        textAlign: "center",
+    },
+    ListMedium:{
+        width: spacing.window * 0.26,
         height: 60,
         textAlign: "center",
     },
